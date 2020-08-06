@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <title>Online Training</title>
+    <link rel="stylesheet" href="fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/qui.css">
+    <script src="js/angular.min.js"></script>
+    <script src="js/angular-route.js"></script>
+    <script src="app.js"></script>
+</head>
+
+<body ng-app="myApp">
+    <!-- Page Content -->
+    <div class="container">
+
+        <div class="row" ng-controller="subjectsCtrl">
+
+            <div class="col-lg-3">
+
+                <h1 class="my-4">Danh Mục</h1>
+                <div class="list-group" ng-repeat="sub in list_subject">
+                    <a href="#/subjects" class="list-group-item">{{sub.Name}}</a>
+                </div>
+
+            </div>
+            <!-- /.col-lg-3 -->
+
+            <div class="col-lg-9">
+                <h1 style="color: red; text-align: center;">Danh Sách Môn Học</h1>
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 mb-4" ng-repeat="sub in list_subject">
+                        <div class="card h-100">
+                            <a href="#/subjects"><img class="card-img-top" src="images/logos/{{sub.Logo}}" alt=""></a>
+                            <div class="card-body">
+                                <h4 class="card-title">
+                                    <a href="#/subjects">{{sub.Id}} || {{sub.Name}}</a>
+                                </h4>
+                            </div>
+                            <div class="card-footer">
+                                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- /.row -->
+
+            </div>
+            <!-- /.col-lg-9 -->
+
+        </div>
+        <!-- /.row -->
+
+    </div>
+</div>
+</body>
+</html>
